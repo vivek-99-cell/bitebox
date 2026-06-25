@@ -44,3 +44,23 @@ nav a.active{
     font-weight: bold;
     border: 2px solid red;
 }
+
+
+.hero{
+    height: 400px;
+    background: url("../images/media/herobanner\ 2.png") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero button{
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: crosshair;
+}
