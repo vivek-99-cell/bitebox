@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DY Patil University — Navigation</title>
+<style>
+  :root {
+    --navy: #0b2545;
+    --navy-dark: #071a33;
+    --gold: #c9a227;
+    --gold-light: #e6c75a;
+    --white: #ffffff;
+    --off-white: #f4f1ea;
+    --gray: #9fb0c9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--off-white);
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--navy);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+
+  .navbar-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 76px;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--navy-dark);
+    font-size: 16px;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  .logo-text .name {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.4px;
+  }
+
+  .logo-text .tag {
+    font-size: 10px;
+    color: var(--gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Nav links */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-links > li {
+    position: relative;
+  }
+
+  .nav-links > li > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--off-white);
+    text-decoration: none;
+    font-size: 14.5px;
+    font-weight: 500;
+    padding: 27px 14px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .nav-links > li > a:hover,
+  .nav-links > li.active > a {
+    color: var(--gold-light);
+  }
+
+  .nav-links > li > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 14px;
+    right: 14px;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-links > li > a:hover::after,
+  .nav-links > li.active > a::after {
+    transform: scaleX(1);
+  }
+
+  .caret {
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-top: -3px;
+    transition: transform 0.2s ease;
+  }
+
+  li.dropdown:hover .caret { transform: rotate(225deg); margin-top: 3px; }
+
+  /* Dropdown */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 16px 30px rgba(0,0,0,0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.2s ease;
+    overflow: hidden;
+    border-top: 3px solid var(--gold);
+  }
+
+  li.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-menu a:last-child { border-bottom: none; }
+
+  .dropdown-menu a:hover {
+    background: var(--off-white);
+    color: var(--navy);
+    padding-left: 26px;
+  }
+
+  /* CTA button */
+  .nav-cta {
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    color: var(--navy-dark);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 22px;
+    border-radius: 999px;
+    margin-left: 12px;
+    white-space: nowrap;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(201,162,39,0.4);
+  }
+
+  /* Hamburger (mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    width: 26px;
+    height: 2.5px;
+    background: var(--off-white);
+    border-radius: 2px;
+    transition: all 0.25s ease;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1080px) {
+    .nav-links > li > a { padding: 27px 10px; font-size: 14px; }
+  }
+
+  @media (max-width: 900px) {
+    .hamburger { display: flex; }
+
+    .nav-links {
+      position: absolute;
+      top: 76px;
+      left: 0;
+      right: 0;
+      background: var(--navy-dark);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .nav-links.open {
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .nav-links > li > a {
+      padding: 16px 24px;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .nav-links > li > a::after { display: none; }
+
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border-radius: 0;
+      background: var(--navy);
+      display: none;
+      border-top: none;
+    }
+
+    li.dropdown.open .dropdown-menu { display: block; }
+    li.dropdown.open .caret { transform: rotate(225deg); margin-top: 3px; }
+
+    .dropdown-menu a {
+      color: var(--gray);
+      padding: 12px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .dropdown-menu a:hover { padding-left: 44px; background: transparent; color: var(--gold-light); }
+
+    .nav-cta {
+      margin: 16px 24px;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">DY</div>
+      <div class="logo-text">
+        <span class="name">DY Patil University</span>
+        <span class="tag">Navi Mumbai</span>
+      </div>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li class="active"><a href="#">Home</a></li>
+
+      <li class="dropdown">
+        <a href="#">About DYPU <span class="caret"></span></a>
+        <div class="dropdown-menu">
+          <a href="#">Schools</a>
+          <a href="#">Programs</a>
+          <a href="#">Admission</a>
+          <a href="#">Examination</a>
+          <a href="#">Infrastructure</a>
+          <a href="#">Convocation Ceremony</a>
+        </div>
+      </li>
+
+      <li><a href="#">MYDY</a></li>
+      <li><a href="#">Campus Life</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Placement</a></li>
+      <li><a href="#">CSEPD</a></li>
+      <li><a href="#">Videos</a></li>
+      <li><a href="#">Alumni</a></li>
+      <li><a href="#">Contact Us</a></li>
+
+      <li><a href="#" class="nav-cta">Apply Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault();
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
