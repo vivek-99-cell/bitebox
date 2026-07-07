@@ -214,3 +214,62 @@ tbody tr{
     min-width: 20px;
     text-align:center;
 }
+
+.auth-container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000, #1c1c1c);
+}
+
+.auth-box{
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0, 0.3);
+}
+
+.auth-box h2{
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.auth-box input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.auth-box input:focus{
+    border-color: red;
+}
+
+.auth-box button{
+    width: 100%;
+    padding: 10px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.auth-box button:hover{
+    background-color: #f80202;
+}
+
+.auth-box p{
+    margin-top: 19px;
+    font-size: 14px;
+}
+
+.auth-box a{
+    color: red;
+    text-decoration: none;
+}
