@@ -1,0 +1,22 @@
+.divide{
+     display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+}
+
+.divide img{
+    width: 270px;
+    height: 300px;
+
+    border-radius: 10px;
+    transition: 1.5s;
+    margin-top: 20px;
+}
+
+.divide img:hover{
+    /* is used to increase or decrease the size of without changing the layout
+    around it */
+    /* scale(0.8) > Decrease size to 80%
+    scale(1.05) > Increase size to 105% */
+    transform: scale(1.05);
+}

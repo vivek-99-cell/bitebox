@@ -346,3 +346,16 @@ translate means moves*/
 .deal-card:hover{
     transform: translateY(-8px);
 }
+
+.red{
+    border-top: 5px solid blue;
+}
+
+.green{
+    border-top: 5px solid green;
+
+}
+
+.yellow{
+    border-top: 5px solid yellow;
+}
