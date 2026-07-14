@@ -359,3 +359,75 @@ translate means moves*/
 .yellow{
     border-top: 5px solid yellow;
 }
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+}
+
+footer{
+    background: #ff3c3c;
+    color: #cccccc;
+    padding: 40px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    color: white;
+    margin-bottom: 15px;
+}
+
+span{
+    color: red;
+}
+
+footer ul{
+    display: block;
+    list-style: none;
+    padding: 0;
+}
+
+footer a{
+    color: #cccccc;
+    text-decoration: none;
+}
+
+/*menu page*/
+
+.card img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    alignment-baseline: left;
+    gap: 30px;
+}
+/*end of menu page*/
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 30px;
+    padding-top:  10px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+}
+
+.social-icons a{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #ccc;
+    background: #222;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.social-icons a:hover{
+    background: red;
+    color: white;
+}
