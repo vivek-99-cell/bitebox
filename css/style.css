@@ -396,8 +396,8 @@ footer a{
 /*menu page*/
 
 .card img{
-    width: 70px;
-    height: 70px;
+    width: 270px;
+    height: 270px;
     object-fit: cover;
 }
 
@@ -430,4 +430,44 @@ footer a{
 .social-icons a:hover{
     background: red;
     color: white;
+}
+
+/* CSS media query used to apply styles only
+when the screen width is 768 pixels or smaller */
+
+
+
+
+@media (max-width: 768px){
+
+    header{
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: black;
+    }
+
+    nav{
+        fle-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    nav img{
+        width: 140px;
+
+    }
+
+    .menu-container{
+        grid-template-columns: 1fr;
+    }
+
+    .deals-container{
+        grid-template-columns: 1fr;
+    }
+    .combo-container{
+        grid-template-columns: 1fr;
+    }
+
 }

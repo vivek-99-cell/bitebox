@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            background-color: blue;
+            color: yellow;
+            padding: 20px;
+        }
+
+        .box2{
+            background-color: green;
+            color:black;
+            padding: 50px;
+        }
+
+        @media not screen and (min-width:780px) {
+            .container{
+                display: flex;
+            }
+            .box1{
+                background-color: black;
+            }
+            .box2{
+                color: crimson;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="box1">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Voluptate placeat doloribus laboriosam, quae animi, eum sint, 
+            obcaecati fuga a quibusdam rerum ipsa nulla mollitia assumenda earum? 
+            Quasi perspiciatis quo iste!
+        </p>
+
+        <p class="box2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+            Cupiditate natus dolorem non beatae facere ab repudiandae repellendus. 
+            Veniam ipsa explicabo atque eum natus obcaecati voluptatum quibusdam, 
+            molestiae doloribus ipsum quidem.
+        </p>
+
+    </div>
+</body>
+</html>
