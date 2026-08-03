@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BiteBox</title>
+    <!-- This is a Font Awesome link -->
+    <script src="https://kit.fontawesome.com/a646d08f7d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="image/favicon_io/favicon.ico">
+    <link rel="" href="script.js"/>
+</head>
+
+<body>
+    <!-- This is a header Section -->
+    <header>
+        <nav>
+            <img src="Image/Logo.png" alt="BiteBox Logo" width="70" height="70">
+            <ul>
+                <li><a href="Home.html" class="active">Home</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="BitDeals.html">Bite Deals</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-cart-plus"></i></a></li>
+                <li><a href="Login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2 class="shop">Shopping Cart</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="item">
+                        <img src="Image/Cheese_Burger.jpg" alt="Cheese Burger">
+                        <div>
+                            <h3>Cheese Burger</h3>
+                            <p>Delicious cheese burger</p>
+                        </div>
+
+                    </td>
+                    <td>$5.99</td>
+                    <td>
+                        <div class="qt-btn">
+                            <button >-</button>
+                            <span>1</span>
+                            <button >+</button>
+                        </div>
+                    </td>
+                    <td>$5.99</td>
+                    <td><button class="remove">❌</button></td>
+                </tr>
+                <tr>
+                    <td class="item">
+                        <img src="Image/Veg_pizza.jpg" alt="Veg Pizza">
+                        <div>
+                            <h3>Veg Pizza</h3>
+                            <p>Delicious Veg Pizza</p>
+                        </div>
+                    </td>
+                    <td>$8.99</td>
+                    <td>
+                        <div class="qt-btn">
+                            <button >-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>$8.99</td>
+                    <td><button class="remove">❌</button></td>
+                </tr>
+                <tr>
+                    <td class="item">
+                        <img src="Image/spaghetti.jpeg" alt="Spaghetti">
+                        <div>
+                            <h3>Spaghetti</h3>
+                            <p>Delicious Spaghetti</p>
+                        </div>
+                    </td>
+                    <td>$7.99</td>
+                    <td>
+                        <div class="qt-btn">
+                            <button >-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                    </td>
+                    <td>$7.99</td>
+                    <td><button class="remove">❌</button></td>
+                </tr>
+                <tr class="grand-total">
+                    <td colspan="3"> Grand Total</td>
+                    <td>$22.97</td>
+                    <td><button class="checkout">Checkout</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>

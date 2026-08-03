@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="title"></h1>
+    <p class="demo"></p>
+    <p class="demo"></p>
+
+    <h2>HTML</h2>
+    <h2>CSS</h2>
+    <script>
+        //by ID
+        document.getElementById("title").innerHTML ="Welcome";
+
+        //by class
+        document.getElementsByClassName("demo")[0].innerHTML = "blue";
+        document.getElementsByClassName("demo")[1].innerHTML = "green";
+
+        //by tag
+        document.getElementsByTagName("h2")[1].style.color = "brown";
+    </script>
+</body>
+</html>
